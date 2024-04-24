@@ -16,7 +16,7 @@ with open('computingdata.csv', 'a', newline='') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(["Time", "Absorbance"])
     start_time = time.time()
-    while time.time() - start_time < 15:
+    while time.time() - start_time < 45:
         data = ser.readline().decode('utf-8').rstrip()
         if data:
             time, absorbance = data.split(',')
@@ -25,7 +25,7 @@ with open('computingdata.csv', 'a', newline='') as csvfile:
 
 ser.close()
 
-for i in range(15):
+for i in range(45):
     df = pd.read_csv('computingdata.csv')
     print(df)
     time.sleep(1)
