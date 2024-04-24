@@ -21,7 +21,7 @@ with open('computingdata.csv', 'a', newline='') as csvfile:
         if data:
             time, absorbance = data.split(',')
             writer.writerow([time, absorbance])
-        time.sleep(1)
+        time.sleep(3)
 
 ser.close()
 
