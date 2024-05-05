@@ -37,7 +37,7 @@ while time.time() - start_time < 10:
     print(current_time)
     time_data.append(current_time)
     absorbance_data.append(absorbance)
-    time.sleep(0.01)
+    time.sleep(1)
 df = pd.DataFrame({'Time': time_data, 'Absorbance': absorbance_data})
 df.to_csv('computingdata.csv', index=False)
 
