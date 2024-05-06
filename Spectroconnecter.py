@@ -8,7 +8,8 @@ import serial
 
 def sleep(seconds):
     time.sleep(seconds)
-    
+
+#Nathan - This code block communicates with the spectrometer by telling it when to beep, before and after blanking, how long to sleep for, and when to begin reading absorbance.
 spectrometer = Genesys("COM3")
 spectrometer.wavelength(wl=500)
 spectrometer.beep()
