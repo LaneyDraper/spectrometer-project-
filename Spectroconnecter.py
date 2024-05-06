@@ -1,3 +1,5 @@
+#This file was created by Nathan and Ryan to communicate with the spectrometer and collect and store absorption data.
+#These lines below import the necessary objects and definitions needed for the code.
 from genesys import Genesys
 import time
 import csv
@@ -16,11 +18,15 @@ time.sleep(6)
 spectrometer.beep()
 spectrometer.reading()
 
+
+#Ryan- This line calls for the start time to begin as whatever the time is.
 start_time = time.time()
 
+#Ryan- These lines create the objects for data to be saved to accordingly.
 time_data = []
 absorbance_data = []
 
+#Ryan- This block defines the function needed to read absorption data from the spectrometer and store the data as a float.
 def read_spectrometer_data():
     ser = spectrometer
     ser.reading()
@@ -29,8 +35,7 @@ def read_spectrometer_data():
 
     return absorbance
 
-start_time = time.time()
-
+#Ryan- This block creates a loop for 10 seconds that collects data and saves the data to the appropriate object and save it to a csv file.
 while time.time() - start_time < 10:
     absorbance = spectrometer.reading() 
     current_time = time.time() - start_time
